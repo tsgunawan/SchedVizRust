@@ -36,7 +36,9 @@ Multicore configuration:
 
 - Rust 1.85.0 or newer. This is the minimum Rust version required for the Rust 2024 edition used by this crate.
 - Cargo
-- Windows is the primary tested target. The app uses `eframe`/`egui` for the GUI and `rfd` for native file dialogs.
+- A desktop environment with graphical application support.
+
+SchedVizRust is intended to be cross-platform. It has been tested on Windows and WSL Ubuntu, and should also work on other Linux desktop environments supported by Rust and the GUI/file-dialog libraries used by the project. The app uses `eframe`/`egui` for the GUI, `rfd` for native file dialogs, and portable Rust crates for CSV and image export. On WSL, GUI support such as WSLg or an X server is required.
 
 ## Compile
 
@@ -46,10 +48,14 @@ Compile the release binary:
 cargo build --release
 ```
 
-On Windows, the compiled executable is written to:
+The compiled executable is written to:
 
-```text
+```bash
+# Windows
 target\release\schedviz_rust.exe
+
+# Linux / WSL Ubuntu
+target/release/schedviz_rust
 ```
 
 Run tests:
@@ -61,7 +67,13 @@ cargo test --workspace
 If the project is stored in a cloud-synced folder, use a local target directory to avoid intermittent build-cache issues:
 
 ```bash
+# Linux / WSL Ubuntu
 CARGO_TARGET_DIR=/path/to/local/target cargo run --release
+```
+
+```powershell
+# Windows PowerShell
+$env:CARGO_TARGET_DIR="C:\path\to\local\target"; cargo run --release
 ```
 
 ## Run
@@ -75,7 +87,13 @@ cargo run --release
 Or run the compiled executable after `cargo build --release`:
 
 ```powershell
+# Windows PowerShell
 .\target\release\schedviz_rust.exe
+```
+
+```bash
+# Linux / WSL Ubuntu
+./target/release/schedviz_rust
 ```
 
 ## Using The App
