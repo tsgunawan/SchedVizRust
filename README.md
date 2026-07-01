@@ -99,10 +99,14 @@ Or run the compiled executable after `cargo build --release`:
 
 Multicore mode supports FCFS, RR, and SRT. SPN and HRRN are available in uniprocessor mode only.
 
-## References
+## Exercises
 
 - [Chapter9Exercises.pdf](Chapter9Exercises.pdf)
 - [Chapter9_Scheduling_Solutions.pdf](Chapter9_Scheduling_Solutions.pdf)
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## Project Layout
 

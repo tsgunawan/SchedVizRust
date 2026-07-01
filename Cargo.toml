@@ -3,6 +3,7 @@ name = "schedviz_rust"
 version = "0.1.0"
 edition = "2024"
 authors = ["Prof. Ir. Ts. Dr. Teddy Surya Gunawan, International Islamic University Malaysia"]
+license = "MIT"
 
 [dependencies]
 eframe = "0.30"
